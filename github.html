@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub — Dinesh Makhija</title>
+<meta name="description" content="Dinesh Makhija's open-source contributions — repositories, contribution activity, and projects on GitHub.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">Dinesh Makhija<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#contributions">Contributions</a></li>
+      <li><a href="ai-lab.html">AI-Lab</a></li>
+      <li><a href="github.html" class="active">GitHub</a></li>
+      <li class="hide-m"><a href="index.html#writing">Writing</a></li>
+      <li><a href="index.html#hello">Say Hello</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero sub">
+  <div class="wrap">
+    <span class="hello">Open source &amp; side code</span>
+    <h1>GitHub<span class="dot">.</span></h1>
+    <div class="hero-intro">
+      <p>Leaders who stop coding stop understanding. This page is my modest attempt to <em>stay honest</em> — live from the GitHub API, green squares and all.</p>
+    </div>
+    <div class="ctas">
+      <a class="btn btn-dark" id="profile-link" href="https://github.com/">Visit my GitHub profile →</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">At a Glance</span>
+    <h2>Activity &amp; contributions.</h2>
+
+    <div class="gh-stats" id="gh-stats">
+      <div class="stat"><div class="num" id="stat-repos">—</div><div class="lbl">Public repos</div></div>
+      <div class="stat"><div class="num" id="stat-followers">—</div><div class="lbl">Followers</div></div>
+      <div class="stat"><div class="num" id="stat-gists">—</div><div class="lbl">Public gists</div></div>
+    </div>
+
+    <div class="gh-chart reveal">
+      <img id="gh-chart-img" src="" alt="GitHub contribution graph — a year of commit activity" loading="lazy">
+      <div class="cap">Contribution activity · past 12 months</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Repositories</span>
+    <h2>Recently active repos.</h2>
+    <div class="repos" id="repos">
+      <div class="repo"><h3>Loading repositories…</h3><p>Fetching live data from the GitHub API.</p></div>
+    </div>
+    <p class="gh-note" id="gh-note"></p>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <span class="eyebrow">Collaborate</span>
+    <h2>Found something worth <em>improving?</em></h2>
+    <p class="lede">Issues, pull requests, and "have you considered…" emails are all welcome. The best code review I ever got started as a stranger's GitHub comment.</p>
+    <div class="ctas">
+      <a class="btn btn-solid" id="profile-link-2" href="https://github.com/">Follow on GitHub →</a>
+      <a class="btn btn-ghost" href="mailto:dmakhija@nuvam.ai">Send an email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <span>© 2026 Dinesh Makhija · Westford, MA</span>
+    <span><a href="index.html">Home</a> · <a href="ai-lab.html">AI-Lab</a> · <a href="https://nuvam.ai">nuvam.ai</a></span>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+/* ============================================================
+   SET YOUR GITHUB USERNAME HERE — the only line you need to edit
+   ============================================================ */
+const GITHUB_USER = "dmakhija2";
+
+const $ = id => document.getElementById(id);
+const profileUrl = `https://github.com/${GITHUB_USER}`;
+$("profile-link").href = profileUrl;
+$("profile-link-2").href = profileUrl;
+$("gh-chart-img").src = `https://ghchart.rshah.org/9C6B00/${GITHUB_USER}`;
+
+async function loadGitHub(){
+  try{
+    const [userRes, repoRes] = await Promise.all([
+      fetch(`https://api.github.com/users/${GITHUB_USER}`),
+      fetch(`https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=8`)
+    ]);
+    if(!userRes.ok || !repoRes.ok) throw new Error("GitHub API error");
+    const user = await userRes.json();
+    const repos = await repoRes.json();
+
+    $("stat-repos").textContent = user.public_repos ?? "—";
+    $("stat-followers").textContent = user.followers ?? "—";
+    $("stat-gists").textContent = user.public_gists ?? "—";
+
+    const box = $("repos");
+    box.innerHTML = "";
+    if(!repos.length){
+      box.innerHTML = `<div class="repo"><h3>No public repos yet</h3><p>The lab notebook is still private — check back soon.</p></div>`;
+      return;
+    }
+    for(const r of repos){
+      const a = document.createElement("a");
+      a.className = "repo reveal in";
+      a.href = r.html_url;
+      a.innerHTML = `
+        <h3>${r.name}</h3>
+        <p>${r.description ? r.description : "No description yet — a work in progress."}</p>
+        <div class="foot">
+          ${r.language ? `<span class="lang">${r.language}</span>` : ""}
+          <span>★ ${r.stargazers_count}</span>
+          <span>⑂ ${r.forks_count}</span>
+          <span>Updated ${new Date(r.pushed_at).toLocaleDateString(undefined,{month:"short",year:"numeric"})}</span>
+        </div>`;
+      box.appendChild(a);
+    }
+  }catch(err){
+    $("repos").innerHTML = `<div class="repo"><h3>Couldn't reach GitHub</h3><p>The live repo list needs an internet connection, and the username in this page's script must match a real GitHub account. Currently set to: <strong>${GITHUB_USER}</strong>.</p></div>`;
+    $("gh-note").textContent = "Tip: open github.html and set GITHUB_USER to your actual GitHub username.";
+  }
+}
+loadGitHub();
+</script>
+</body>
+</html>

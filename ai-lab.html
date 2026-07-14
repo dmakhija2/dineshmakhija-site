@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Lab — Dinesh Makhija</title>
+<meta name="description" content="The AI-Lab — experiments and projects Dinesh Makhija is tinkering with: agentic AI, LLM economics, and platform tooling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">Dinesh Makhija<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#contributions">Contributions</a></li>
+      <li><a href="ai-lab.html" class="active">AI-Lab</a></li>
+      <li><a href="github.html">GitHub</a></li>
+      <li class="hide-m"><a href="index.html#writing">Writing</a></li>
+      <li><a href="index.html#hello">Say Hello</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero sub">
+  <div class="wrap">
+    <span class="hello">The workbench</span>
+    <h1>AI-Lab<span class="dot">.</span></h1>
+    <div class="hero-intro">
+      <p>This is where I tinker. Two of these apps were built in a single afternoon — because the biggest constraint now is <em>the clarity of the idea, not the mechanics of implementation.</em> One of them, Splitter, has since evolved into the engine behind VocalGuru. <a href="https://www.linkedin.com/posts/dinesh-makhija-5774141_github-dmakhija2stem-splitter-share-7469784243263627265-6D83">Read the full story on LinkedIn</a>.</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">On the Bench</span>
+    <h2>Current projects &amp; experiments.</h2>
+    <div class="legend">
+      <span class="l-exploring">Exploring</span>
+      <span class="l-progress">In progress</span>
+      <span class="l-finalizing">Finalizing</span>
+      <span class="l-shipped">Shipped</span>
+    </div>
+
+    <div class="bench">
+      <div class="project reveal">
+        <div class="meta">
+          <span class="status finalizing">Finalizing</span>
+          <span>Personal App</span>
+          <span>2026</span>
+        </div>
+        <div class="body">
+          <h3>🧳 Travel Organizer</h3>
+          <p>One place for a whole trip — photos, a trip summary, day-by-day details, budget tracking, and the highlights worth remembering. Built because our family trips were scattered across camera rolls, spreadsheets, and group chats.</p>
+          <p>The fun engineering problem: letting AI draft the trip summary and pick highlight photos automatically, so the organizing takes minutes instead of a weekend.</p>
+          <div class="stack">
+            <span class="chip">Photo galleries</span><span class="chip">Budget tracking</span><span class="chip">Trip timeline</span><span class="chip">AI summaries</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project reveal">
+        <div class="meta">
+          <span class="status shipped">Shipped</span>
+          <span>Web App</span>
+          <span>Hosted on Lovable</span>
+        </div>
+        <div class="body">
+          <h3>🥗 What's on My Plate</h3>
+          <p>A personal nutrition and meal tracking tool — built in an afternoon to solve a problem I kept wishing someone else would build.</p>
+          <div class="stack">
+            <span class="chip">Nutrition tracking</span><span class="chip">Built on Lovable</span><span class="chip">Afternoon build</span>
+          </div>
+          <div class="links"><a href="https://whatsonmyplate.nuvam.ai">Try it → whatsonmyplate.nuvam.ai</a></div>
+        </div>
+      </div>
+
+      <div class="project reveal">
+        <div class="meta">
+          <span class="status shipped">Shipped</span>
+          <span>Open Source</span>
+          <span>Models run locally</span>
+        </div>
+        <div class="body">
+          <h3>🎵 STEM Splitter</h3>
+          <p>Audio stem separation tool — isolate vocals, drums, bass, and other instruments from any track. AI-powered source separation running on local hardware.</p>
+          <p>Splitter has since evolved into the engine behind VocalGuru — the best side projects seem to do that.</p>
+          <div class="stack">
+            <span class="chip">Source separation</span><span class="chip">Local inference</span><span class="chip">Open source</span>
+          </div>
+          <div class="links"><a href="https://splitter.nuvam.ai">Try it → splitter.nuvam.ai</a></div>
+        </div>
+      </div>
+
+      <div class="project reveal">
+        <div class="meta">
+          <span class="status finalizing">Finalizing</span>
+          <span>Web App</span>
+          <span>Built on Splitter</span>
+        </div>
+        <div class="body">
+          <h3>🎤 VocalGuru</h3>
+          <p>Compare your own singing against the original recording and track improvement over time. Both takes run through Splitter to isolate the vocals, then get analyzed for pitch accuracy, melodic contour, and consistency using librosa, Praat, and FFmpeg.</p>
+          <p>Token-gated while in active development — email <a href="mailto:admin@nuvam.ai">admin@nuvam.ai</a> for access.</p>
+          <div class="stack">
+            <span class="chip">librosa</span><span class="chip">Praat</span><span class="chip">FFmpeg</span><span class="chip">Pitch analysis</span>
+          </div>
+          <div class="links"><a href="https://vocalguru.nuvam.ai">Try it → vocalguru.nuvam.ai</a></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="gh-note">The messier, in-progress code behind some of these lives on <a href="github.html">GitHub</a>.</p>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <span class="eyebrow">AI Prompt Tools</span>
+    <h2>Try them <em>live.</em></h2>
+    <p class="lede">Small, practical tools that run via Claude — use them live on nuvam.ai, or download the standalone HTML to run in your own <a href="https://claude.ai">claude.ai</a> session.</p>
+    <div class="cards">
+      <a class="card reveal" href="https://nuvam.ai/tool-jobfinder.html">
+        <span class="tag">⌘ Career Tool</span>
+        <h3>JobFinder</h3>
+        <p>Get a tailored LinkedIn search strategy — optimized keywords, Boolean strings, target companies, and outreach templates.</p>
+        <span class="go">↓ Download standalone HTML</span>
+      </a>
+      <a class="card reveal" href="https://nuvam.ai/tool-pitchmaker.html">
+        <span class="tag">◉ Career Tool</span>
+        <h3>30-Second Pitch</h3>
+        <p>Turn your experience into a sharp elevator pitch — three versions for different situations, plus delivery tips.</p>
+        <span class="go">↓ Download standalone HTML</span>
+      </a>
+      <a class="card reveal" href="https://nuvam.ai/tool-assessment.html">
+        <span class="tag">△ Leadership Tool</span>
+        <h3>Assessment CookBook</h3>
+        <p>Generate a structured 5-day engineering assessment — diagnostic questions, scoring rubrics, and red flags.</p>
+        <span class="go">↓ Download standalone HTML</span>
+      </a>
+    </div>
+    <p class="gh-note">All three run live at <a href="https://nuvam.ai/ai-lab">nuvam.ai/ai-lab</a> — fill in the fields and hit go.</p>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <span class="eyebrow">Compare Notes</span>
+    <h2>Building something similar? <em>Let's talk.</em></h2>
+    <p class="lede">I love trading notes with other builders — especially on agentic AI in regulated environments, where the hard problems hide.</p>
+    <div class="ctas">
+      <a class="btn btn-solid" href="mailto:dmakhija@nuvam.ai">Send an email →</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/dinesh-makhija-5774141/">Connect on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <span>© 2026 Dinesh Makhija · Westford, MA</span>
+    <span><a href="index.html">Home</a> · <a href="github.html">GitHub</a> · <a href="https://nuvam.ai">nuvam.ai</a></span>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

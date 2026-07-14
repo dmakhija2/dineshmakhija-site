@@ -3,60 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dinesh Makhija</title>
-<meta name="description" content="Dinesh Makhija — personal site. Coming soon.">
-<meta name="robots" content="noindex">
+<title>Dinesh Makhija — Engineer, Builder, Teammate</title>
+<meta name="description" content="Dinesh Makhija — a personal page. Two decades of building platforms and teams in healthcare, smart devices, and enterprise security, and the things I've learned along the way.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#0F1C2E; --ink-soft:#33465C; --slate:#5B6B7F;
-  --paper:#F4F6F8; --line:#C9D2DA; --amber:#C98A00; --amber-deep:#9C6B00;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:"IBM Plex Mono",monospace;
-  background:var(--paper); color:var(--ink);
-  min-height:100vh; display:flex; align-items:center; justify-content:center;
-  padding:28px;
-}
-main{max-width:640px; width:100%}
-.eyebrow{
-  font-size:11px; letter-spacing:.18em; text-transform:uppercase;
-  color:var(--amber-deep); display:flex; align-items:center; gap:12px; margin-bottom:22px;
-}
-.eyebrow::before{content:""; width:28px; height:1px; background:var(--amber-deep)}
-h1{
-  font-family:Archivo,sans-serif; font-weight:800;
-  font-size:clamp(40px,8vw,72px); letter-spacing:-.035em; line-height:1.02;
-  margin-bottom:26px;
-}
-h1 .dot{color:var(--amber)}
-p{font-size:14px; color:var(--ink-soft); line-height:1.8; max-width:34em}
-.status{
-  display:inline-flex; align-items:center; gap:10px; margin-top:34px;
-  font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--slate);
-  border:1px solid var(--line); padding:12px 18px; background:#fff;
-}
-.status .pulse{width:8px;height:8px;border-radius:50%;background:var(--amber);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-@media (prefers-reduced-motion: reduce){.status .pulse{animation:none}}
-.links{margin-top:30px; display:flex; gap:22px; font-size:12.5px}
-.links a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--amber)}
-.links a:hover{color:var(--amber-deep)}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<main>
-  <span class="eyebrow">dineshmakhija.nuvam.ai</span>
-  <h1>Dinesh Makhija<span class="dot">.</span></h1>
-  <p>Personal site under construction — contributions, the AI-Lab, and notes from two decades of building platforms and teams.</p>
-  <span class="status"><span class="pulse"></span>Site in progress · check back soon</span>
-  <div class="links">
-    <a href="https://nuvam.ai">nuvam.ai</a>
-    <a href="https://www.linkedin.com/in/dinesh-makhija-5774141/">LinkedIn</a>
+
+<nav>
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">Dinesh Makhija<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#contributions">Contributions</a></li>
+      <li><a href="ai-lab.html">AI-Lab</a></li>
+      <li><a href="github.html">GitHub</a></li>
+      <li class="hide-m"><a href="index.html#writing">Writing</a></li>
+      <li><a href="index.html#hello">Say Hello</a></li>
+    </ul>
   </div>
-</main>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="hello">Hi, I'm</span>
+    <h1>Dinesh Makhija<span class="dot">.</span></h1>
+    <div class="hero-intro">
+      <p>I'm an engineer at heart who somehow ended up leading teams — and I've been fortunate to spend two decades building things in places where the work really matters: healthcare, smart devices, and enterprise security.</p>
+      <p>None of what's on this page was done alone. <em>The best work of my career has always come from great teams</em> — this is simply my small record of what we built together, and what I learned along the way.</p>
+    </div>
+  </div>
+</header>
+
+<section id="contributions">
+  <div class="wrap">
+    <span class="eyebrow">Contributions</span>
+    <h2>A few things I've had the privilege to work on.</h2>
+    <p class="lede">Less a highlight reel, more a ledger — the projects and teams that shaped me.</p>
+
+    <div class="ledger">
+      <div class="entry reveal">
+        <div class="when">Consumer Hardware<span class="org">Amazon Alexa</span></div>
+        <div>
+          <h3>Common speech middleware at Alexa scale</h3>
+          <p>I managed the common speech middleware that enabled the Alexa experience across more than 10 million devices and over a dozen device categories — Echo Show, Fire TV Stick, Fire TV Cube, Fire Tablets, and more. It was a great experience in appreciating the value of building test suites and automation, and in learning to diagnose voice-interaction issues across such a diverse device fleet.</p>
+          <p class="credit">Made possible by some of the most rigorous engineers I've ever worked alongside.</p>
+        </div>
+      </div>
+
+      <div class="entry reveal">
+        <div class="when">Healthcare &amp; Rx<span class="org">Blink Health</span></div>
+        <div>
+          <h3>Agentic AI in a regulated pharmacy</h3>
+          <p>We reimagined pharmacy operations under strict compliance constraints — incrementally improving automation, combining agentic AI with traditional automation to reach over 50% touchless operations. The hard part wasn't the AI; it was earning the trust of pharmacists and regulators one careful step at a time.</p>
+          <p class="credit">Credit belongs to a team that cared as much about patients as about code.</p>
+        </div>
+      </div>
+
+      <div class="entry reveal">
+        <div class="when">Enterprise Security</div>
+        <div>
+          <h3>Platforms built for auditability</h3>
+          <p>I contributed to high-stakes platform architecture where reliability and auditability weren't features — they were the product. This is where I learned that boring, predictable systems are often the bravest thing you can build.</p>
+        </div>
+      </div>
+
+      <div class="entry reveal">
+        <div class="when">Ongoing<span class="org">nuvam.ai</span></div>
+        <div>
+          <h3>Helping teams close the AI-to-delivery gap</h3>
+          <p>These days, through <a href="https://nuvam.ai">Nuvam</a>, I try to give back what I've learned — helping engineering organizations work through accumulated friction in their processes, architecture, and AI adoption. Mostly, I listen first.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <span class="eyebrow">How I Try to Work</span>
+    <h2>A few beliefs, held <em>loosely.</em></h2>
+    <div class="values">
+      <div class="value reveal"><span class="tag">Teams first</span><h3>People build platforms</h3><p>Every system I'm proud of was really a team I was proud of. My job is mostly to remove obstacles and get out of the way.</p></div>
+      <div class="value reveal"><span class="tag">Leave it stronger</span><h3>Embed, build, hand off</h3><p>Show up, help build the foundations that are missing, and leave the team structurally stronger than I found it.</p></div>
+      <div class="value reveal"><span class="tag">Keep learning</span><h3>Still an engineer at heart</h3><p>AI is changing our craft faster than anything I've seen. I try to stay a student of it — and share notes as I go. My <a href="ai-lab.html">AI-Lab</a> is where that tinkering lives.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="writing">
+  <div class="wrap">
+    <span class="eyebrow">Notes &amp; Writing</span>
+    <h2>Sharing what I'm <em>still learning.</em></h2>
+    <div class="cards">
+      <a class="card reveal" href="https://www.linkedin.com/posts/dinesh-makhija-5774141_making-your-organization-ai-ready-ugcPost-7473396193608351744-RTw8">
+        <span class="tag">Leadership Guide</span>
+        <h3>AIReady — A Leadership Guide</h3>
+        <p>A practical framework for engineering leaders navigating the shift to AI-augmented organizations — strategy, team structure, and delivery.</p>
+        <span class="go">Read on LinkedIn →</span>
+      </a>
+      <a class="card reveal" href="https://www.linkedin.com/posts/dinesh-makhija-5774141_where-are-my-tokens-going-ugcPost-7463053907435532288-AaEN/">
+        <span class="tag">Deep Dive</span>
+        <h3>Where Are My Tokens Going?</h3>
+        <p>A look at LLM token economics for engineering leaders — costs, optimization strategies, and real-world budget implications.</p>
+        <span class="go">Read on LinkedIn →</span>
+      </a>
+      <div class="card soon reveal">
+        <span class="tag">In the Notebook</span>
+        <h3>More notes on the way</h3>
+        <p>Thoughts brewing on agentic AI, platform architecture, and engineering org design.</p>
+        <span class="go">Follow along on LinkedIn</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hello" class="contact">
+  <div class="wrap">
+    <span class="eyebrow">Say Hello</span>
+    <h2>I always have time for a <em>good conversation.</em></h2>
+    <p class="lede">Whether you're wrestling with an engineering org problem, exploring AI adoption, or just want to compare notes — my inbox is open. I try to reply to everyone.</p>
+    <div class="ctas">
+      <a class="btn btn-solid" href="mailto:dmakhija@nuvam.ai">Send an email →</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/dinesh-makhija-5774141/">Connect on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <span>© 2026 Dinesh Makhija · Westford, MA</span>
+    <span><a href="ai-lab.html">AI-Lab</a> · <a href="github.html">GitHub</a> · <a href="https://nuvam.ai">nuvam.ai</a> · <a href="https://www.linkedin.com/in/dinesh-makhija-5774141/">LinkedIn</a></span>
+  </div>
+</footer>
+
+<script src="site.js"></script>
 </body>
 </html>
